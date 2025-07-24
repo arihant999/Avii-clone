@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f9f9f9;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #222;
+  color: white;
+  padding: 10px 20px;
+}
+
+.logo {
+  height: 40px;
+  border-radius: 5px;
+}
+
+.links a {
+  color: #00f2ff;
+  margin-left: 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+iframe {
+  width: 100%;
+  height: calc(100vh - 70px);
+  border: none;
+}
