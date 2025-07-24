@@ -1,25 +1,159 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AVII - Courses</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Avii | Courses & Batches</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0e0e0e;
+      color: white;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #111;
+      padding: 10px 20px;
+    }
+    .menu-item {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      color: white;
+    }
+    .menu-item svg {
+      margin-right: 8px;
+    }
+    .profile {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .banner {
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      height: 200px;
+    }
+    .banner-img {
+      width: 100%;
+      display: none;
+      object-fit: cover;
+    }
+    .banner-img.active {
+      display: block;
+    }
+    .sections {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+    .section {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 16px;
+      width: 200px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .section-img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .section-btn {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+      background: #111;
+    }
+    .stat-block h3 {
+      margin: 0;
+      font-size: 24px;
+    }
+    .footer {
+      text-align: center;
+      padding: 16px;
+      background: #000;
+      font-size: 14px;
+      color: #aaa;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="assets/nakoda.jpg" alt="AVII Logo">
-      <h1>AVII</h1>
+  <div class="header">
+    <div class="menu-items">
+      <div class="menu-item" onclick="window.open('https://t.me/+rc5Psv_S2VJkMGM1', '_blank')">
+        <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12...Z"/>
+        </svg>
+        <span>Join</span>
+      </div>
     </div>
-    <div class="contact-links">
-      <a href="https://t.me/MockManager" target="_blank">@MockManager</a>
-      <a href="https://t.me/+rc5Psv_S2VJkMGM1" target="_blank">Join Channel</a>
+    <img src="/assets/Avii.jpg" alt="Profile" class="profile" onclick="window.open('https://t.me/@MockManager', '_blank')">
+  </div>
+
+  <div class="banner">
+    <img src="https://studyuk.fun/img/um.jpg" class="banner-img active" onclick="window.open('https://t.me/+rc5Psv_S2VJkMGM1', '_blank')">
+    <img src="https://studyuk.fun/img/rwa.jpg" class="banner-img" onclick="window.open('https://t.me/+rc5Psv_S2VJkMGM1', '_blank')">
+    <img src="https://studyuk.fun/img/tg.jpg" class="banner-img" onclick="window.open('https://t.me/+rc5Psv_S2VJkMGM1', '_blank')">
+  </div>
+
+  <div class="sections">
+    <div class="section" onclick="window.open('/offline', '_blank')">
+      <img src="https://studyuk.fun/img/um.jpg" class="section-img">
+      <h3>Offline Batches</h3>
+      <button class="section-btn">Explore</button>
     </div>
-  </header>  <main>
-    <section id="courses">
-      <!-- Course batches will be loaded here dynamically -->
-    </section>
-  </main>  <footer>
-    <p>© 2025 AVII. All rights reserved.</p>
-  </footer>  <script src="script.js"></script></body>
+    <div class="section" onclick="window.open('/goal', '_blank')">
+      <img src="https://studyuk.fun/img/um.jpg" class="section-img">
+      <h3>Courses</h3>
+      <button class="section-btn">Explore</button>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat-block">
+      <h3>200+</h3>
+      <p>Offline Batch</p>
+    </div>
+    <div class="stat-block">
+      <h3>3000+</h3>
+      <p>Courses</p>
+    </div>
+    <div class="stat-block">
+      <h3>700+</h3>
+      <p>Students</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>© 2025 Avii. All rights reserved.</p>
+  </div>
+
+  <script>
+    // Banner rotation
+    let current = 0;
+    const banners = document.querySelectorAll('.banner-img');
+    function rotate() {
+      banners[current].classList.remove('active');
+      current = (current + 1) % banners.length;
+      banners[current].classList.add('active');
+    }
+    setInterval(rotate, 3000);
+  </script>
+</body>
 </html>
