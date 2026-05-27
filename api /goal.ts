@@ -1,1 +1,1 @@
-const response = await fetch("https://studyuk.fun/goal");
+const response = await fetch("https://sdvbots.site/goal/");
